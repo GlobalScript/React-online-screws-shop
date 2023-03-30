@@ -13,7 +13,8 @@ export const addFirstThunk = createAsyncThunk('/cart/addFirstThunk', (product_id
                         }
                         const response = axios.post(URL_API + '/add-first-cart', data, { withCredentials: true })
                                     .then(({data})=>{
-                                        return {data, product_id};
+                                        Cookies.set('cart_id', data.id, { expires: 5, secure: true, sameSite: 'none' });
+                                        return {data: data.cart, product_id};
                                     })
                                     .catch((e)=>{
                                         console.log(e.message);
@@ -25,7 +26,7 @@ export const addFirstThunk = createAsyncThunk('/cart/addFirstThunk', (product_id
         }
 );
 
-export const addNextThunk = createAsyncThunk('/cart/addNextThunk', (product_id, {getState})=>{
+export const addNextThunk = createAsyncThunk('/cart/addNextThunk', (product_id, {getState})=> {
             if(Cookies.get('cart_id')){
                 const {countGoods} = getState();
                 const cart_count = {};
@@ -165,9 +166,11 @@ export  const removeProductThunk = createAsyncThunk('/cart/removeProductThunk', 
 );
 
 export const getCartThunk = createAsyncThunk('/cart/getCartThunk', ()=>{
+    
             if(Cookies.get('cart_id')){
                 const response = axios.get(URL_API + '/get-cart/' + Cookies.get('cart_id')) 
                             .then(({data})=>{
+                                if(!data) Cookies.remove('cart_id');
                                 return {data};
                             })
                             .catch((e)=>{
@@ -229,15 +232,8 @@ export const orderThunk = createAsyncThunk('/cart/orderThunk', (order_form, {get
 );
 
 export const cookieAgree = createAsyncThunk('/cart/cookieAgree', ()=>{
-                const response = axios.post(URL_API + '/message-cookie-agree', {}, { withCredentials: true })
-                            .then(()=>{
-                                return true;
-                            })
-                            .catch((e)=>{
-                                console.log(e.message);
-                                return false
-                            })
-                                return response;
+            Cookies.set('agree', 'ok', {secure: true, sameSite: 'none'});
+                return true;
         
     }
 );
@@ -310,7 +306,7 @@ export const countSlice = createSlice({
             }
         },
         [addNextThunk.fulfilled]: (state, action) => {
-            if(Object.keys(action.payload).length){
+            if(action.payload.data){
                 const cart = JSON.parse(action.payload.data.cart);
                 state.count = cart.count; 
                 state.active = cart.active;
@@ -342,7 +338,6 @@ export const countSlice = createSlice({
              }
         },
         [removeProductThunk.fulfilled]: (state, action) => {
-           console.log(state.subPrice)
             if(Object.keys(action.payload).length){
                 const cart = JSON.parse(action.payload.data.cart);
                 state.count = cart.count; 
@@ -359,7 +354,7 @@ export const countSlice = createSlice({
              }
         },
         [getCartThunk.fulfilled]: (state, action) => {
-            if(Object.keys(action.payload).length){
+            if(action.payload.data){
                 const cart = JSON.parse(action.payload.data.cart);
                 state.preCount = cart.count; 
                 state.preActive = cart.active;
@@ -375,7 +370,7 @@ export const countSlice = createSlice({
             }
         },
         [orderThunk.fulfilled]: (state, action) => {
-            if(Object.keys(action.payload).length){
+            if(action.payload.data){
                 const num = action.payload.data.phone_number
                 state.orderNumber = num.match(/\d{9}/g);
                 state.count = {};

@@ -11,16 +11,11 @@ function Footer(){
     return (
         <div className="footer-container">
           <Link to="/home"><h2 onClick={navigateClick}>Petrovich</h2></Link>
-          <div className="nav-block" onClick={navigateClick}>
-            <Link to="/home"><i className="icon-home"></i></Link>
-            <Link to="/about"><i className="icon-doc-text-inv"></i></Link>
-            <Link to="/authorization"><i className="icon-user"></i></Link>
-            <p className="footer-label">© Internet-shop «Petrovich™»</p>
-        </div>
+          
         <div className="contacts-block">
             <a ><i className="icon-mail"></i></a>
             <a ><i className="icon-facebook"></i></a>
-            <a href="https://github.com/GlobalScript/react-screw-shop" target="_blank"  ><i className="icon-git"></i></a>
+            <a href="https://github.com/GlobalScript" target="_blank"  ><i className="icon-git"></i></a>
             <a ><i className="icon-paper-plane"></i></a>
         </div>
         </div>

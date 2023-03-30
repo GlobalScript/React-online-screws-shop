@@ -23,9 +23,9 @@ function sortBy(goods, category, selectBy) {
           case 'price-asc':
             return orderBy(categoriesFilter, 'price', 'asc');
           case 'short-asc':
-            return orderBy(categoriesFilter, 'short', 'asc');
+            return orderBy(categoriesFilter, 'title', 'asc');
           case 'short-desc':
-            return orderBy(categoriesFilter, 'short', 'desc');  
+            return orderBy(categoriesFilter, 'title', 'desc');  
           default:
             return categoriesFilter;
         }

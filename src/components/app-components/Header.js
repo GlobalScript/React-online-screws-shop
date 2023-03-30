@@ -73,9 +73,9 @@ function navigateClick(event) {
               <NavLink to="/search" className={cartActive}>
                 <i className='icon-search'onClick={navigateClick}></i>
               </NavLink>
-              <NavLink to="/authorization" className={cartActive}>
+              {/* <NavLink to="/authorization" className={cartActive}>
                 <i className='icon-user' onClick={navigateClick}></i>
-              </NavLink>
+              </NavLink> */}
     </div>
     </header>
     )

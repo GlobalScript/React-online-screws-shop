@@ -1,16 +1,15 @@
 .unit-container {
   display: flex;
-  margin: 10px;
   flex-wrap: wrap;
   justify-content: center;
-  min-height: calc(100vh - 380px);
+  min-height: calc(100vh - 420px);
 }
 .card-container {
-  width: 200px;
+  width: 250px;
   height: 300px;
   border-radius: 4px;
   border:$borderColor;
-  margin: 20px 40px;
+  margin: 20px 20px;
   overflow: hidden;
   &:hover {
     @include hoverAnchor;
@@ -23,7 +22,7 @@
   transition: $allTransition;
 }
 .image-field {
-  width: 200px;
+  width: 250px;
   height: 200px;
   position: relative;
 }
@@ -39,7 +38,7 @@
   display: flex;
 	justify-content: center;
 	position: absolute;
-	top:150px;
+	top: 150px;
 	right:0px;
 	left: 0px;
 }
@@ -57,8 +56,7 @@
 	justify-content: space-between;
 	position: absolute;
   width: 30px;
-	top:10px;
-	right:10px;
+	top: 10px;
 	left: 10px;
 }
 .product-item img {
@@ -71,8 +69,8 @@
   width: 100%;
   height: 50px;
   background: $backgroundColor;
+  line-height: 1.4;
   overflow: hidden;
-  word-wrap: break-word;
   a {
     text-decoration: none;
   }
@@ -82,7 +80,9 @@
   font-weight: 400;
   color: #444444;
   padding-top: 5px;
-  
+  &:hover {
+    cursor: pointer;
+  }
 }
 .price {
   font-size: 18px;

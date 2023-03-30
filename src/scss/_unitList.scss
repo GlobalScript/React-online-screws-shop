@@ -38,7 +38,7 @@
  } 
  .unit-list-discription span {
     font-size: 14px;
-   
+    line-height: 1.5;
  }
   .unit-list-cart-bar a, .unit-list-cart-bar i {
       @include styleButton(15px);

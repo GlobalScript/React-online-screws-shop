@@ -5,8 +5,8 @@ import { countState, addFirstThunk, deductThunk   } from '../../store/cartSlice'
 import Slider from "./Slider";
 
 function Single({unit}) {
-    const {id, short, price, image0, image1, image2, image3, image4, description} = unit;
-    const [srcImage, setSrcImage] = useState(image0);
+    const {id, title, price, image, description} = unit;
+    const [srcImage, setSrcImage] = useState(image);
     const {active, count, statusCart} = useSelector(countState);
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -30,16 +30,16 @@ function cartHandler(event){
                 </div>
                 </div>
                 <Slider>
-            <div className="item-slider"><img src={image0} onClick={clickImage}/></div>
-            <div className="item-slider"><img src={image1} onClick={clickImage}/></div>
-            <div className="item-slider"><img src={image2} onClick={clickImage}/></div>
-            <div className="item-slider"><img src={image3} onClick={clickImage}/></div>
-            <div className="item-slider"><img src={image4} onClick={clickImage}/></div>
+            <div className="item-slider"><img src={image} onClick={clickImage}/></div>
+            <div className="item-slider"><img src={image} onClick={clickImage}/></div>
+            <div className="item-slider"><img src={image} onClick={clickImage}/></div>
+            <div className="item-slider"><img src={image} onClick={clickImage}/></div>
+            <div className="item-slider"><img src={image} onClick={clickImage}/></div>
                 </Slider>
         </div>
         <div className="single-right-content">
             <div className='single-short'>
-            <h2>{short}</h2>
+            <h2>{title}</h2>
             </div>
             <span className="price">{price}&nbsp;&#x24;</span>
             <h5>Description</h5>

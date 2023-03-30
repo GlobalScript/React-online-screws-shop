@@ -1,19 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.868b93ba.css",
-    "main.js": "/static/js/main.22c19653.js",
-    "static/media/footerLogo.png": "/static/media/footerLogo.a68bdedd801fff2d592e.png",
-    "static/media/fontello.eot?25013037": "/static/media/fontello.e412ed692d0ab5487e2c.eot",
-    "static/media/fontello.ttf?25013037": "/static/media/fontello.7ce4ec5c6e278ca6f421.ttf",
-    "static/media/fontello.svg?25013037": "/static/media/fontello.9b9e9f8ccab2a86e40b1.svg",
-    "static/media/fontello.woff?25013037": "/static/media/fontello.bc166661793c634df080.woff",
-    "static/media/fontello.woff2?25013037": "/static/media/fontello.17a205e42e8cc1f60e24.woff2",
+    "main.css": "/static/css/main.b06f2f75.css",
+    "main.js": "/static/js/main.9b8630f0.js",
+    "static/media/screws.png": "/static/media/screws.e96c36f2b471f0ef13fd.png",
+    "static/media/fittings.jpg": "/static/media/fittings.7bb9204d53d27b23cc86.jpg",
+    "static/media/fontello.eot?63089773": "/static/media/fontello.ccb82974d311df8df478.eot",
+    "static/media/fontello.ttf?63089773": "/static/media/fontello.7cfb8238fa014cc2bc4f.ttf",
+    "static/media/fontello.svg?63089773": "/static/media/fontello.aee113f770b015420f39.svg",
+    "static/media/fontello.woff?63089773": "/static/media/fontello.73ecb5fa70e7e793aebf.woff",
+    "static/media/fontello.woff2?63089773": "/static/media/fontello.fbb628d29ac1a731e05e.woff2",
     "index.html": "/index.html",
-    "main.868b93ba.css.map": "/static/css/main.868b93ba.css.map",
-    "main.22c19653.js.map": "/static/js/main.22c19653.js.map"
+    "main.b06f2f75.css.map": "/static/css/main.b06f2f75.css.map",
+    "main.9b8630f0.js.map": "/static/js/main.9b8630f0.js.map"
   },
   "entrypoints": [
-    "static/css/main.868b93ba.css",
-    "static/js/main.22c19653.js"
+    "static/css/main.b06f2f75.css",
+    "static/js/main.9b8630f0.js"
   ]
 }

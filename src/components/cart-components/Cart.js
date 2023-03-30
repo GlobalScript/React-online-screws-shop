@@ -41,10 +41,10 @@ function clickImageUnit(itemID) {
                       <i className='icon-cancel btn-clear' data-cart={goods[item]?.id}></i>
                       </td>
                       <td className="product-img">
-                        <img src={goods[item]?.image0} alt="Image-goods-cart" onClick={() => clickImageUnit(item)} />
+                        <img src={goods[item]?.image} alt="Image-goods-cart" onClick={() => clickImageUnit(item)} />
                       </td>
                       <td className="product-name">
-                        <h4 className="title"><Link to="../single">{goods[item]?.short}</Link></h4>
+                        <h4 className="title" onClick={() => clickImageUnit(item)}>{goods[item]?.title}</h4>
                       </td>
                       <td className="product-price"><span>{goods[item]?.price}&nbsp;&#8372;</span></td>
                       <td className="product-quantity">

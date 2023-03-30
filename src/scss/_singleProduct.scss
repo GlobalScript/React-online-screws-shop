@@ -5,9 +5,9 @@
 }
 .single-img {
     border: $borderColor;
-    margin:10px 50px;
-   height: 400px;
-   width: 400px;
+    margin:10px 140px;
+   height: 250px;
+   width: 250px;
 }
 .single-img img {
     object-fit: contain;
@@ -46,7 +46,7 @@
   }
   .single-go-back {
     @include styleButton(18px);
-    margin: 30px auto;
+    margin: 10px auto;
 &:hover {
   color: $thematColor;
 }

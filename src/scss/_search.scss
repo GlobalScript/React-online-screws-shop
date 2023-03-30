@@ -6,6 +6,10 @@
     display: flex;
     justify-content: center;
 }
+.search-input input {
+    border: 1px solid black !important;
+    border-radius: 2px;
+}
 .search-input input{
     border: 1px solid #bcb8b8;
     height: 40px;

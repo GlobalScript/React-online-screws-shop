@@ -4,7 +4,7 @@ import { unitProps } from '../../store/dataSlice';
 
 function Unit(props){
     const dispatch = useDispatch();
-    const {id, short, price, image0} = props;
+    const {id, title, price, image} = props;
     const navigate = useNavigate();
     const {active, count, statusCart} = useSelector(state => state.countGoods);
 function clickUnit() {
@@ -15,7 +15,7 @@ function clickUnit() {
         <div className="card-container">
         <div className="product-item">
             <div className="image-field">
-                <img className="card-img" src={image0} alt="image" onClick={clickUnit}/>
+                <img className="card-img" src={image} alt="image" onClick={clickUnit}/>
             <div className="cart-status">
                 {active[id] && <div className='status-ok'><h6>{count[id]}</h6></div>}
             </div>
@@ -27,7 +27,7 @@ function clickUnit() {
         {!statusCart && <div className="cart-bar"><div className="lds-dual-ring"></div></div>}
         </div>
         <div className="product-short">
-            <Link to="../single"> <h6>{short}</h6></Link>
+            <h6 onClick={clickUnit}>{title}</h6>
         </div>
             <span className="price">{price}&nbsp;&#x24;</span>	
       </div>

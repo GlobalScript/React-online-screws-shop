@@ -12,7 +12,7 @@ function Search(){
     const [found, setFound] = useState([]);
 function searchFilter(goods, value){
     return goods.filter(elem => {
-        return elem.short.toLowerCase().includes(value.toLowerCase());
+        return elem.title.toLowerCase().includes(value.toLowerCase());
     });
   }
 function change(event) {
